@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>CDNのVue3とElementPlusを使う。</title>
+    <link rel="stylesheet" href="../css/element-plus-theme-chalk-index.css">
+    <script src="../js/vue.global.prod.3.0.5.js"></script>
+    <script src="../js/element-plus-full.1.0.2.js"></script>
+    <!--<script src="https://unpkg.com/vue@next"></script>-->
+    <!--
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/fonts/element-icons.woff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.5/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/element-plus/lib/index.full.js"></script>
+    -->
+    <script src="./main.js"></script>
+</head>
+<body>
+<h1><a href="https://github.com/ytyaru/JS.CDN.Vue3.ElementPlus.20210128115701">CDNのVue3とElementPlusを使う。</a></h1>
+<div id="app">
+    <el-button @click="onClick">ElementPlusのボタンだよ</el-button>
+    <span class="el-icon-user-solid"></span>
+    <i class="el-icon-edit"></i>
+    <el-button-group>
+        <el-button @click="setFontSize('1.0em')" title="フォントサイズ小" round>小</el-button>
+        <el-button @click="setFontSize('1.4em')" title="フォントサイズ中" round autofocus>中</el-button>
+        <el-button @click="setFontSize('1.8em')" title="フォントサイズ大" round>大</el-button>
+    </el-button-group>
+    <el-button-group>
+        <el-button @click="setWriteDirection('vertical')" title="タテ書き" round>縦</el-button>
+        <el-button @click="setWriteDirection('horizontal')" title="ヨコ書き" round>横</el-button>
+    </el-button-group>
+</div>
+</body>
+</html>
