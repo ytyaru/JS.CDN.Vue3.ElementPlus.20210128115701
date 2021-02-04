@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>CDNのVue3とElementPlusを使う。</title>
+    <link rel="stylesheet" href="../css/element-plus-theme-chalk-index.css">
+    <script src="../js/vue.global.prod.3.0.5.js"></script>
+    <script src="../js/element-plus-full.1.0.2.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+<div id="app">
+    <el-skeleton :loading="isLoading" animated />
+<!--    <el-breadcrumb separator=">">-->
+    <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item><a href="./index.html" title="home">🏠</a></el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: './index.html' }">category</el-breadcrumb-item>
+        <el-breadcrumb-item>summary</el-breadcrumb-item>
+        <el-breadcrumb-item>detail</el-breadcrumb-item>
+    </el-breadcrumb>
+    <h1><a href="https://github.com/ytyaru/JS.CDN.Vue3.ElementPlus.20210128115701">CDNのVue3とElementPlusを使う。</a></h1>
+    <el-button @click="notifyClick">通知を出す。押してみろ</el-button>
+    <span class="el-icon-user-solid"></span>
+    <i class="el-icon-edit"></i>
+    <br>
+    <el-radio-group v-model="writeDirection">
+        <el-radio-button label="vertical" @change="setWriteDirection" title="タテ書き" round>縦</el-radio-button>
+        <el-radio-button label="horizontal" @change="setWriteDirection" title="ヨコ書き" round>横</el-radio-button>
+    </el-radio-group>
+    <el-radio-group v-model="fontSize">
+        <el-radio-button label="1.0em" @change="setFontSize()" title="フォントサイズ小" round>小</el-radio-button>
+        <el-radio-button label="1.4em" @change="setFontSize()"  title="フォントサイズ中" round>中</el-radio-button>
+        <el-radio-button label="1.8em" @change="setFontSize()"  title="フォントサイズ大" round>大</el-radio-button>
+    </el-radio-group>
+    <el-radio-group v-model="fontFamily">
+        <el-radio-button label="serif" @change="setFontFamily" title="明朝体" round>明</el-radio-button>
+        <el-radio-button label="gothic" @change="setFontFamily" title="ゴシック体" round>ゴ</el-radio-button>
+    </el-radio-group>
+    <el-radio-group v-model="color">
+        <el-radio-button label="white" @change="setColor" title="背景白" round>白</el-radio-button>
+        <el-radio-button label="black" @change="setColor" title="背景黒" round>黒</el-radio-button>
+    </el-radio-group>
+</div>
+<ul>
+    <li>el-radio-button には round 属性がない（el-buttonのみ）</li>
+</ul>
+</body>
+</html>
