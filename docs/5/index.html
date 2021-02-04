@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>CDNのVue3とElementPlusを使う。</title>
+    <link rel="stylesheet" href="../css/element-plus-theme-chalk-index.css">
+    <script src="../js/vue.global.prod.3.0.5.js"></script>
+    <script src="../js/element-plus-full.1.0.2.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+<h1><a href="https://github.com/ytyaru/JS.CDN.Vue3.ElementPlus.20210128115701">CDNのVue3とElementPlusを使う。</a></h1>
+<div id="app">
+<!--    <el-button @click="onClick">ElementPlusのボタンだよ</el-button>-->
+    <el-button @click="notifyClick">通知を出す。押してみろ</el-button>
+
+    <span class="el-icon-user-solid"></span>
+    <i class="el-icon-edit"></i>
+    <el-radio-group v-model="fontSize">
+        <el-radio-button label="1.0em" @change="setFontSize()" title="フォントサイズ小" round>小</el-radio-button>
+        <el-radio-button label="1.4em" @change="setFontSize()"  title="フォントサイズ中" round>中</el-radio-button>
+        <el-radio-button label="1.8em" @change="setFontSize()"  title="フォントサイズ大" round>大</el-radio-button>
+    </el-radio-group>
+    <el-radio-group v-model="writeDirection">
+        <el-radio-button label="vertical" @change="setWriteDirection" title="タテ書き" round>縦</el-radio-button>
+        <el-radio-button label="horizontal" @change="setWriteDirection" title="ヨコ書き" round>横</el-radio-button>
+    </el-radio-group>
+</div>
+<ul>
+    <li>el-radio-button には round 属性がない（el-buttonのみ）</li>
+</ul>
+</body>
+</html>
